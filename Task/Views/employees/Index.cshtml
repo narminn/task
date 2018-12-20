@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Task.Models.employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p style="margin-left:15px">
+    <a href="employees/create" class="btn btn-primary">Create New Employee</a>
+    
+</p>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Employees
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Surname
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                        <th>
+                            Job Title
+                        </th>
+                        <th>
+                            Home City
+                        </th>
+                        <th>
+                            Experience
+                        </th>
+                        <th>
+                            Photo
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Surname
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                        <th>
+                            Job Title
+                        </th>
+                        <th>
+                            Home City
+                        </th>
+                        <th>
+                            Experience
+                        </th>
+                        <th>
+                            Photo
+                        </th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="employees/Details/@item.id">@Html.DisplayFor(modelItem => item.name)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.surname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.age)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.jobtitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.home_city)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.experience)
+                            </td>
+                            <td>
+                                <img src="@item.photo" alt="Alternate Text"style="width:150px; height:100px;object-fit:cover" />
+                            </td>
+                            <td>
+                                <a href="employees/Delete/@item.id" class="fa fa-times" style="color:red"></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,73 @@
+﻿@model Task.Models.employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-left:15px">Details</h2>
+
+<div style="margin-left:15px">
+    <dl class="dl-horizontal">
+        <dt>
+            Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            Surname
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surname)
+        </dd>
+
+        <dt>
+            Age
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            Job Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobtitle)
+        </dd>
+
+        <dt>
+            Home City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.home_city)
+        </dd>
+
+        <dt>
+            Experience
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.experience)
+        </dd>
+
+        <dt>
+            Photo
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model=>model.photo)" alt="Alternate Text" style="width:150px; height:100px;object-fit:cover" />
+
+        </dd>
+
+    </dl>
+</div>
+<p style="margin-left:15px">
+    @Html.ActionLink("Back to List", "Index")
+</p>
